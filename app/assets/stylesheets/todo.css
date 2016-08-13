@@ -30,7 +30,9 @@ a:hover { color:#FF3300; }
 .todos ul li { list-style-type:none; margin-bottom:10px; padding-bottom:10px; border-bottom:1px dotted #CCC; }
 .todos ul li.finished { color:#666; }
 .todos ul li a { color:#666; }
-.todos ul li del { padding-left:15px; background:url(images/ok.gif) no-repeat left center; }
+.todos ul li del { background:url(images/ok.gif) no-repeat left center; }
+
+.timeinfo { font-size: .5em; color: #ccc }
 
 .post p { margin-bottom:10px; }
 .post .submit { line-height:normal; -padding:0; }

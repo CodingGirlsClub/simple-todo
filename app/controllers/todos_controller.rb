@@ -54,7 +54,7 @@ class TodosController < ApplicationController
   end
 
   def todo_scope
-    Todo
+    Todo.ordered
   end
 
   def todo_params
