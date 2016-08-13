@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  title: MyString
+  remark: MyText
+  is_finished: false
+
+two:
+  id: 1
+  title: MyString
+  remark: MyText
+  is_finished: false
