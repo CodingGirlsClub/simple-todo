@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>SimpleTodo</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="page">
+      <div class="header box">
+        <h1><a href="/">Todo List</a></h1>
+      </div> <!-- header end -->
+
+      <%= yield %>
+
+      <div class="foot">
+        Copyright &copy; <a href="http://rubyonrails.org/" target="_blank">CGC <%= image_tag("rails.png") %></a>
+      </div> <!-- footer end -->
+    </div> <!-- page end -->
   </body>
 </html>
