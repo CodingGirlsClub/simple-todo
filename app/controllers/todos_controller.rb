@@ -3,29 +3,38 @@ class TodosController < ApplicationController
 
   def index
     load_todos
-  end
-
-  def show
+    build_todo
   end
 
   def edit
   end
 
   def update
-  end
-
-  def new
     build_todo
+    respond_to do |format|
+      if @todo.update(todo_params)
+        format.html { redirect_to todos_path, notice: "更新成功" }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def create
+    build_todo
+    respond_to do |format|
+      if @todo.save
+        format.html { redirect_to todos_path, notice: "创建成功" }
+      else
+        format.html { render :index }
+      end
+    end
   end
 
   def destroy
     @todo.destroy
     respond_to do |format|
       format.html { redirect_to todos_url, notice: '删除成功' }
-      format.json { head :no_content }
     end
   end
 
@@ -36,7 +45,7 @@ class TodosController < ApplicationController
   end
 
   def load_todos
-    @todo ||= todo_scope.all
+    @todos ||= todo_scope.all
   end
 
   def build_todo

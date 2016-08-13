@@ -2,20 +2,19 @@
         <div class="box todos">
           <h2 class="box">待办事项</h2>
           <ul>
-            <li>
-              测试
-              <a href="#">修改</a>
-              <a href="#">删除</a>
-            </li>
+            <% @todos.each do |todo| %>
+              <li>
+                <%= todo.title %>
+                <%= link_to "编辑", edit_todo_path(todo.id) %>
+                <%= link_to "删除", todo_path(todo.id), method: :delete %>
+              </li>
+            <% end %>
           </ul>
         </div>
 
         <div class="box post">
           <h2>添加</h2>
-          <form action="/todo/new" method="post" id="post_new">
-              <p><input type="text" name="title" class="long_txt" /></p>
-              <p><input type="submit" class="submit" value="添加" /></p>
-          </form>
+          <%= render 'todos/form' %>
         </div>
 
       </div> <!-- main end -->
