@@ -1,4 +1,7 @@
 <div class="main box">
+  <% if flash[:notice] %>
+    <p class="box notice"> <%= flash[:notice] %> </p>
+  <% end %>
   <div class="box todos">
     <h2 class="box">待办事项</h2>
     <ul>
