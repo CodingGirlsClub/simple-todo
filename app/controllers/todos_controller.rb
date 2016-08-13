@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :load_todo, only: [:show, :edit, :update, :destroy]
+  before_action :load_todo, only: [:edit, :update, :destroy]
 
   def index
     load_todos
