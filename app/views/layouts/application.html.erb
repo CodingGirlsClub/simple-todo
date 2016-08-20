@@ -11,6 +11,13 @@
   </head>
   <body>
     <div class="page">
+      <div class="user_info">
+        <% if logined? %>
+          <span class="username"><%= current_user.username %></span> <%= link_to "退出", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "登陆", login_path %> <%= link_to "注册", signup_path %>
+        <% end %>
+      </div>
       <div class="header box">
         <h1><a href="/">Todo List</a></h1>
       </div> <!-- header end -->

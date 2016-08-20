@@ -1,0 +1,17 @@
+<div class="box post">
+  <% if flash[:notice] %>
+    <p class="box notice"> <%= flash[:notice] %> </p>
+  <% elsif flash[:error] %>
+    <p class="box error"> <%= flash[:error] %> </p>
+  <% end %>
+  <div class="account">
+    <h3>用户注册</h3>
+    <%= form_for @user do |f| %>
+    <p><label>　用户名: </label><%= f.text_field :username %></p>
+    <p><label>　　密码: </label><%= f.password_field :password %></p>
+    <p><label>确认密码: </label><%= f.password_field :password_confirmation %></p>
+    <p><%= f.submit "注册" %></p>
+    <p><%= link_to "已有账号？快来登陆", login_path %></p>
+    <% end %>
+  </div>
+</div>

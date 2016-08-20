@@ -24,9 +24,33 @@ a:hover { color:#FF3300; }
 .header h1 { font-size:50px; }
 .header a { color:#333; text-decoration:none; }
 
+.user_info { float: right; margin: 5px; }
+.user_info a { text-decoration: none; color: #555; }
+.user_info a:hover { text-decoration: underline; }
+.username { color: #aaa; }
+
 .box h2 { padding-bottom:5px; margin-bottom:10px; font-weight:400; color:#c52f24; font-size:28px;}
 
+.account {
+  margin: 0 auto;
+  text-align: center;
+  width: 250px;
+  padding: 20px 50px;
+}
+.account a {
+  font-size: 12px;
+}
+.account h3 {
+  margin-bottom: 35px;
+  font-size: 24px;
+  color: #c52f24;
+}
+.account label {
+  margin-right: 5px;
+}
+
 .notice { background-color: #d9edf7; padding: 15px; }
+.error { background-color: #f2dede; padding: 15px; }
 
 .todos ul { padding-left: 0; }
 .todos ul li { list-style-type:none; margin-bottom:10px; padding-bottom:10px; border-bottom:1px dotted #CCC; }
