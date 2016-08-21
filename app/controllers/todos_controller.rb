@@ -46,7 +46,7 @@ class TodosController < ApplicationController
   end
 
   def load_todos
-    @todos ||= current_user.todos
+    @todos ||= current_user.todos.ordered
   end
 
   def build_todo
@@ -55,7 +55,7 @@ class TodosController < ApplicationController
   end
 
   def todo_scope
-    Todo.ordered
+    Todo
   end
 
   def todo_params
