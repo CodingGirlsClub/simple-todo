@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  before_action :need_login
   before_action :load_todo, only: [:edit, :update, :destroy]
 
   def index
@@ -45,12 +46,12 @@ class TodosController < ApplicationController
   end
 
   def load_todos
-    @todos ||= todo_scope.all
+    @todos ||= current_user.todos
   end
 
   def build_todo
     @todo ||= todo_scope.new
-    @todo.attributes = todo_params
+    @todo.attributes = todo_params.merge(user_id: current_user.id)
   end
 
   def todo_scope

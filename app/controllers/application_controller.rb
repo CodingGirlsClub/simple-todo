@@ -24,4 +24,8 @@ class ApplicationController < ActionController::Base
   def unlogin
     redirect_to todos_url if logined?
   end
+
+  def need_login
+    redirect_to login_path unless logined?
+  end
 end
