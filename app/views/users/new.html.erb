@@ -6,6 +6,7 @@
   <% end %>
   <div class="account">
     <h3>用户注册</h3>
+    <%# form_for 一般用在与model关联的情况下，建议自行查看文档 %>
     <%= form_for @user do |f| %>
     <p><label>　用户名: </label><%= f.text_field :username %></p>
     <p><label>　　密码: </label><%= f.password_field :password %></p>

@@ -1,10 +1,13 @@
+<%# flash消息通知部分 %>
 <% if flash[:notice] %>
   <p class="box notice"> <%= flash[:notice] %> </p>
 <% elsif flash[:error] %>
   <p class="box error"> <%= flash[:error] %> </p>
 <% end %>
+<%# login 登陆表单，生成的form可以通过浏览器调试工具查看到 对比的学习效果更好 %>
 <div class="account">
   <h3>用户登陆</h3>
+  <%# form_tag 用在无model关联情况，建议查看文档 %>
   <%= form_tag login_path do |f| %>
   <p><label>　用户名: </label><%= text_field_tag :username %></p>
   <p><label>　　密码: </label><%= password_field_tag :password %></p>
