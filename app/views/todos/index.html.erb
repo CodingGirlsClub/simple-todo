@@ -14,6 +14,11 @@
             <% else %>
               <%= todo.title %>
             <% end %>
+            <% if todo.remark %>
+              <%= link_to edit_todo_path(todo.id), class: 'remark', title: todo.remark do %> 
+                <i class="iconfont">&#xe602;</i>
+              <% end %>
+            <% end %>
             <span class="timeinfo"><%= todo.created_at.to_formatted_s(:db) %></span>
             <% if todo.is_finished %>
               <%= link_to "取消", todo_path(todo.id, todo: {is_finished: false}), method: :patch %>,
