@@ -46,7 +46,7 @@ class TodosController < ApplicationController
   end
 
   def load_todos
-    @todos ||= current_user.todos.ordered
+    @todos ||= current_user.todos.ordered.group_by{ |t| t.created_at.to_date }
   end
 
   def build_todo
